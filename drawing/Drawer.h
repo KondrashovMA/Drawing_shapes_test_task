@@ -6,35 +6,35 @@
 namespace DRAW {
 
 /*!
-* Класс отрисовки 
+* РљР»Р°СЃСЃ РѕС‚СЂРёСЃРѕРІРєРё
 */
-class Drawer
-{
-public:
+    class Drawer
+    {
+    public:
 
-    /*! Указатели на фигуры, в которых хранятся координаты и другая информация для отрисовки  */
-    typedef std::vector<SHAPES::Shape*> Shapes;
-    
-    /*! Тип вектора фигур для отрисовки  */
-    typedef std::vector<sf::VertexArray> SfShapesVector;
+        /*! РЈРєР°Р·Р°С‚РµР»Рё РЅР° С„РёРіСѓСЂС‹, РІ РєРѕС‚РѕСЂС‹С… С…СЂР°РЅСЏС‚СЃСЏ РєРѕРѕСЂРґРёРЅР°С‚С‹ Рё РґСЂСѓРіР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РґР»СЏ РѕС‚СЂРёСЃРѕРІРєРё  */
+        typedef std::vector<SHAPES::Shape*> Shapes;
 
-    /*! Добавить фигуру для отрисовки */
-    void addShape(SHAPES::Shape& shape);
+        /*! РўРёРї РІРµРєС‚РѕСЂР° С„РёРіСѓСЂ РґР»СЏ РѕС‚СЂРёСЃРѕРІРєРё  */
+        typedef std::vector<sf::VertexArray> SfShapesVector;
 
-    /*!
-    * Отрисовка всех ранее переданных методу фигур
-    */
-    void drawFigures();
+        /*! Р”РѕР±Р°РІРёС‚СЊ С„РёРіСѓСЂСѓ РґР»СЏ РѕС‚СЂРёСЃРѕРІРєРё */
+        void addShape(SHAPES::Shape& shape);
 
-private:
+        /*!
+        * РћС‚СЂРёСЃРѕРІРєР° РІСЃРµС… СЂР°РЅРµРµ РїРµСЂРµРґР°РЅРЅС‹С… РјРµС‚РѕРґСѓ С„РёРіСѓСЂ
+        */
+        void drawFigures();
 
-    Shapes shapes;
+    private:
 
-    /*! Создаёт вектор фигур, которые отрисовываются в окне */
-    SfShapesVector createSfShapes(const Shapes& shapes);
+        Shapes shapes;
+
+        /*! РЎРѕР·РґР°С‘С‚ РІРµРєС‚РѕСЂ С„РёРіСѓСЂ, РєРѕС‚РѕСЂС‹Рµ РѕС‚СЂРёСЃРѕРІС‹РІР°СЋС‚СЃСЏ РІ РѕРєРЅРµ */
+        SfShapesVector createSfShapes(const Shapes& shapes);
 
 
-    /*! Отрисовывает круг, состоящий из массивов точек */
-    sf::VertexArray createCircle(sf::VertexArray& figure, const SHAPES::Shape& shape);
-};
+        /*! РћС‚СЂРёСЃРѕРІС‹РІР°РµС‚ РєСЂСѓРі, СЃРѕСЃС‚РѕСЏС‰РёР№ РёР· РјР°СЃСЃРёРІРѕРІ С‚РѕС‡РµРє */
+        sf::VertexArray createCircle(sf::VertexArray& figure, const SHAPES::Shape& shape);
+    };
 }
