@@ -1,15 +1,16 @@
-#include "shapes/Shapes.h"
+#include "Shapes.h"
 #include "Drawer.h"
 
 
 int main()
 {
+    system("chcp 1251");
     /*!
-    * ��������� ��������� �����, ������� �� ���������� ������. 
-    * ���� �������� �� ������� ���������� ������ (������ triangle2 �� ����� ��������)
+    * Добавляем несколько фигур, задавая им координаты вершин.
+    * Есть проверка на задание одинаковых вершин (фигура triangle2 не будет выведена)
     */
 
-    // ���������� �����
+    // объявление фигур
     SHAPES::Circle circle1("circle1", 100);
     SHAPES::Circle circle2("circle2", 50);
     SHAPES::Triangle triangle1("triangle1");
@@ -17,7 +18,7 @@ int main()
     SHAPES::Rectangle quad1("quad1");
     SHAPES::Rectangle quad2("quad2");
 
-    // ������� ��������� �����
+    // задание координат фигур
     SHAPES::Shape::Coordinates circleCoord1;
     circleCoord1.push_back(std::pair<double, double>(100, 100));
     SHAPES::Shape::Coordinates circleCoord2;
@@ -28,7 +29,7 @@ int main()
     triangleCoords1.push_back(std::pair<double, double>(200, 250));
     SHAPES::Shape::Coordinates triangleCoords2;
     triangleCoords2.push_back(std::pair<double, double>(400, 350));
-    triangleCoords2.push_back(std::pair<double, double>(400, 350)); // �� ���������, ��������� ������� ���������� ���������� ������
+    triangleCoords2.push_back(std::pair<double, double>(400, 350)); // не выведется, поскольку введены одинаковые координаты вершин
     triangleCoords2.push_back(std::pair<double, double>(200, 250));
     SHAPES::Shape::Coordinates quadCoords1;
     quadCoords1.push_back(std::pair<double, double>(700, 350));
